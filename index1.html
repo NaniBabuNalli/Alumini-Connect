@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alumni Connect</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const Home = () => (
+            <div>
+                <main className="flex-grow bg-gray-300 text-center py-16">
+                    <h1 className="text-4xl font-bold mb-4">Alumni Connect</h1>
+                    <p className="text-lg">Connect with your fellow alumni and stay updated with the latest news and events.</p>
+                </main>
+                <section className="bg-white text-center py-16">
+                    <h2 className="text-2xl font-bold mb-4">Welcome to Alumni Connect</h2>
+                    <p className="text-lg max-w-2xl mx-auto mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <img src="https://placehold.co/400x200" alt="Illustration of alumni celebrating" className="mx-auto"/>
+                </section>
+            </div>
+        );
+
+        const Events = () => (
+            <div className="text-center py-16">
+                <h1 className="text-4xl font-bold mb-4">Events</h1>
+                <p className="text-lg">Stay updated with the latest events.</p>
+            </div>
+        );
+
+        const Jobs = () => (
+            <div className="text-center py-16">
+                <h1 className="text-4xl font-bold mb-4">Jobs</h1>
+                <p className="text-lg">Find job opportunities here.</p>
+            </div>
+        );
+
+        const University = () => (
+            <div className="text-center py-16">
+                <h1 className="text-4xl font-bold mb-4">University</h1>
+                <p className="text-lg">Information about universities.</p>
+            </div>
+        );
+
+        const Meeting = () => (
+            <div className="text-center py-16">
+                <h1 className="text-4xl font-bold mb-4">Meeting</h1>
+                <p className="text-lg">Schedule and join meetings.</p>
+            </div>
+        );
+
+        const BulkImport = () => (
+            <div className="text-center py-16">
+                <h1 className="text-4xl font-bold mb-4">Bulk Import</h1>
+                <p className="text-lg">Import data in bulk.</p>
+            </div>
+        );
+
+        const SearchAlumni = () => (
+            <div className="text-center py-16">
+                <h1 className="text-4xl font-bold mb-4">Search Alumni</h1>
+                <p className="text-lg">Search for alumni.</p>
+            </div>
+        );
+
+        const SendMail = () => (
+            <div className="text-center py-16">
+                <h1 className="text-4xl font-bold mb-4">Send Mail</h1>
+                <p className="text-lg">Send mail to alumni.</p>
+            </div>
+        );
+
+        const RegisterStudent = () => (
+            <div className="text-center py-16">
+                <h1 className="text-4xl font-bold mb-4">Register as Student</h1>
+                <form className="max-w-md mx-auto">
+                    <input type="text" placeholder="Name" className="block w-full mb-4 p-2 border"/>
+                    <input type="email" placeholder="Email" className="block w-full mb-4 p-2 border"/>
+                    <input type="password" placeholder="Password" className="block w-full mb-4 p-2 border"/>
+                    <button type="submit" className="bg-black text-white px-4 py-2 rounded">Register</button>
+                </form>
+            </div>
+        );
+
+        const RegisterAlumni = () => (
+            <div className="text-center py-16">
+                <h1 className="text-4xl font-bold mb-4">Register as Alumni</h1>
+                <form className="max-w-md mx-auto">
+                    <input type="text" placeholder="Name" className="block w-full mb-4 p-2 border"/>
+                    <input type="email" placeholder="Email" className="block w-full mb-4 p-2 border"/>
+                    <input type="password" placeholder="Password" className="block w-full mb-4 p-2 border"/>
+                    <button type="submit" className="bg-black text-white px-4 py-2 rounded">Register</button>
+                </form>
+            </div>
+        );
+
+        const Login = () => (
+            <div className="text-center py-16">
+                <h1 className="text-4xl font-bold mb-4">Login</h1>
+                <form className="max-w-md mx-auto">
+                    <input type="email" placeholder="Email" className="block w-full mb-4 p-2 border"/>
+                    <input type="password" placeholder="Password" className="block w-full mb-4 p-2 border"/>
+                    <button type="submit" className="bg-black text-white px-4 py-2 rounded">Login</button>
+                </form>
+            </div>
+        );
+
+        const App = () => {
+            const [page, setPage] = useState('Home');
+
+            const renderPage = () => {
+                switch (page) {
+                    case 'Home':
+                        return <Home />;
+                    case 'Events':
+                        return <Events />;
+                    case 'Jobs':
+                        return <Jobs />;
+                    case 'University':
+                        return <University />;
+                    case 'Meeting':
+                        return <Meeting />;
+                    case 'BulkImport':
+                        return <BulkImport />;
+                    case 'SearchAlumni':
+                        return <SearchAlumni />;
+                    case 'SendMail':
+                        return <SendMail />;
+                    case 'RegisterStudent':
+                        return <RegisterStudent />;
+                    case 'RegisterAlumni':
+                        return <RegisterAlumni />;
+                    case 'Login':
+                        return <Login />;
+                    default:
+                        return <Home />;
+                }
+            };
+
+            return (
+                <div className="min-h-screen flex flex-col">
+                    <header className="bg-gray-200 p-4 flex justify-between items-center">
+                        <div className="flex items-center">
+                            <i className="fas fa-user-graduate text-2xl mr-2"></i>
+                            <span className="text-xl font-bold">Alumni Connect</span>
+                        </div>
+                        <nav className="flex space-x-4">
+                            <button onClick={() => setPage('Home')} className="hover:underline">Home</button>
+                            <button onClick={() => setPage('Events')} className="hover:underline">Events</button>
+                            <button onClick={() => setPage('Jobs')} className="hover:underline">Jobs</button>
+                            <div className="relative group">
+                                <button onClick={() => setPage('University')} className="hover:underline">University</button>
+                                <div className="absolute hidden group-hover:block bg-white shadow-lg mt-1">
+                                    <button onClick={() => setPage('University')} className="block px-4 py-2 hover:bg-gray-100">Option 1</button>
+                                    <button onClick={() => setPage('University')} className="block px-4 py-2 hover:bg-gray-100">Option 2</button>
+                                </div>
+                            </div>
+                            <button onClick={() => setPage('Meeting')} className="hover:underline">Meeting</button>
+                            <button onClick={() => setPage('BulkImport')} className="hover:underline">Bulk Import</button>
+                            <button onClick={() => setPage('SearchAlumni')} className="hover:underline">Search Alumni</button>
+                            <button onClick={() => setPage('SendMail')} className="hover:underline">Send Mail</button>
+                        </nav>
+                        <div className="flex space-x-2">
+                            <button onClick={() => setPage('RegisterStudent')} className="bg-white border border-black text-black px-4 py-2 rounded">Register as Student</button>
+                            <button onClick={() => setPage('RegisterAlumni')} className="bg-white border border-black text-black px-4 py-2 rounded">Register as Alumni</button>
+                            <button onClick={() => setPage('Login')} className="bg-black text-white px-4 py-2 rounded">Login</button>
+                        </div>
+                    </header>
+                    {renderPage()}
+                    <footer className="bg-gray-200 text-center py-4">
+                        <div className="flex justify-between items-center max-w-4xl mx-auto">
+                            <div>
+                                <h3 className="font-bold">Alumni Connect</h3>
+                                <p>Connecting alumni worldwide</p>
+                            </div>
+                            <div className="flex space-x-4">
+                                <a href="#" className="text-black"><i className="fab fa-facebook-f"></i></a>
+                                <a href="#" className="text-black"><i className="fab fa-twitter"></i></a>
+                                <a href="#" className="text-black"><i className="fab fa-instagram"></i></a>
+                                <a href="#" className="text-black"><i className="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <p className="mt-4">© 2024 Alumni Connect. All rights reserved.</p>
+                    </footer>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
